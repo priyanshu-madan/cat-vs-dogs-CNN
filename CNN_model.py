@@ -13,9 +13,9 @@ import time
 
 
 
-dense_layers = [0,1,2]
-layer_sizes = [32,64,128]
-conv_layers = [1,2,3]
+dense_layers = [0]
+layer_sizes = [64]
+conv_layers = [3]
 
 for dense_layer in dense_layers:
     for layer_size in layer_sizes:
@@ -61,13 +61,14 @@ for dense_layer in dense_layers:
 
             model.fit(X,y,batch_size=32,epochs=10,validation_split=0.1, callbacks=[tensorboard])
 
+model.save("64*3-CNN.model")
 
-            '''
-            HOW TO USE TensorBoard?
-            open terminal in the root folder "Cats-vs-dogs-CNN"
-            type the below command and enter:
-            
-            tensorboard --logdir='logs/'
-            
-            copy and paste the link in the browser
-            '''
+'''
+HOW TO USE TensorBoard?
+open terminal in the root folder "Cats-vs-dogs-CNN"
+type the below command and enter:
+
+tensorboard --logdir='logs/'
+
+copy and paste the link in the browser
+'''
